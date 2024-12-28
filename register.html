@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>登录注册忘记密码页面</title>
+    <link rel="stylesheet" href="登录css/normalize.min.css" />
+    <link rel="stylesheet" href="登录css/register.css" />
+  </head>
+
+  <body>
+    <div id="formContainer" class="dwo">
+      <div class="formLeft">
+        <img src="登录images/touxiang1.png" />
+      </div>
+      <div class="formRight">
+        <!-- Register form -->
+        <form id="register" class="otherForm">
+          <header>
+            <h1>用户注册</h1>
+            <p>注册后享受更多服务</p>
+          </header>
+          <section>
+            <label>
+              <p>用户名</p>
+              <input type="text" id="userName" />
+              <div class="border"></div>
+            </label>
+            <label>
+              <p>邮箱</p>
+              <input type="email" id="email" />
+              <div class="border"></div>
+            </label>
+            <label>
+              <p>密码</p>
+              <input type="password" id="pwd" />
+              <div class="border"></div>
+            </label>
+            <label>
+              <p>重复密码</p>
+              <input type="password" id="repwd" />
+              <div class="border"></div>
+            </label>
+            <button id="btn" type="button">注 册</button>
+          </section>
+          <footer>
+            <a href="login.html">返 回</a>
+          </footer>
+        </form>
+      </div>
+    </div>
+    <script src="登录js/register.js"></script>
+  </body>
+</html>

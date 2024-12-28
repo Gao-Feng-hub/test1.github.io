@@ -1,0 +1,172 @@
+#outside {
+
+    width: 1000px;
+
+    margin: 0 auto;
+
+    /* border: 1px solid black; */
+
+    overflow: hidden;
+
+    padding-bottom: 15px;
+
+}
+
+
+
+#outside h3 {
+
+    width: 95%;
+
+    margin: 15px auto;
+
+    padding-bottom: 10px;
+
+    border-bottom: 2px solid red;
+
+    font-family: "宋体", sans-serif;
+    color: red;
+    font-weight: 900;
+    font-size: 25px;
+
+}
+
+
+
+#outside .comment1 {
+
+    width: 95%;
+
+    margin: 10px auto;
+
+    color: #BBBBBB;
+
+    font-size: 12px;
+
+    border-bottom: 1px dashed red;
+
+    font-family: "宋体", sans-serif;
+
+}
+
+
+
+#outside .comment1 time {
+
+    float: right;
+    color: rgb(171, 224, 126);
+
+}
+
+
+
+#outside .comment1 span {
+
+    color: #5979B2;
+
+    margin-left: 5px;
+
+    font-weight: bold;
+
+}
+
+
+
+#outside .comment1 p {
+
+    font-size: 16px;
+
+    color: rgb(179, 179, 179);
+
+}
+
+
+
+#outside h4 {
+
+    width: 95%;
+
+    margin: 15px auto;
+
+    color: #404E73;
+
+    font-size: 16px, sans-serif;
+
+}
+
+
+
+#outside #addComment {
+
+    width: 95%;
+
+    margin: 0 auto;
+
+    font-size: 16px;
+
+    color: #BBBBBB;
+
+    font-weight: bold;
+
+    font-family: "华文楷体"
+
+}
+
+
+
+#outside #name {
+
+    width: 200px;
+
+    border: 1px solid #D9E2EF;
+
+}
+
+
+
+#outside #comContent {
+
+    width: 765px;
+
+    height: 100px;
+
+    resize: none;
+
+    border: 1px solid #D9E2EF;
+
+    vertical-align: text-top;
+
+}
+
+
+
+#addComment button {
+
+    width: 100px;
+
+    height: 30px;
+
+    background-color: #2D46A3;
+
+    color: white;
+
+    border: hidden;
+
+    float: right;
+
+    margin: 15px 100px;
+
+}
+
+.del {
+    width: 50px;
+
+    height: 30px;
+
+    background-color: #2D46A3;
+
+    color: white;
+
+    border: hidden;
+
+}

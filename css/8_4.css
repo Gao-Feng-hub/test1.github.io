@@ -1,0 +1,28 @@
+.A {
+    width: 99.5%;
+    margin: auto;
+}
+
+main {
+    margin: auto;
+    background-image: url("../img/背景2.jpg");
+}
+
+video {
+    width: 395px;
+    height: 200px;
+}
+
+#text {
+    position: relative;
+    top: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: black;
+    font-weight: bold;
+}
+
+video:hover ~ #text {
+    top: 0;
+    opacity: 1;
+}

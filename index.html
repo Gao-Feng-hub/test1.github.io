@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/gouwuche.css">
+    <link rel="stylesheet" href="css/camera.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/toubu.css">
+    <link rel="stylesheet" href="css/style1.css" media="screen" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/8_4.css">
+    <link rel="stylesheet" href="css/liuyan.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+    <script src="js/jquery.ui.totop.js"></script>
+    <script src="js/gouwuche.js"></script>
+    <script src="js/jquery.tooltipster.js"></script>
+    <style>
+        body {
+            background-color: rgb(42, 41, 41);
+        }
+
+        svg {
+            height: 100px;
+        }
+
+        nav[class="nav-bar"] {
+            filter: drop-shadow(0 0 11px rgba(10, 9, 9, 0.824));
+        }
+
+        div[class="camera_wrap"] {
+            filter: drop-shadow(0 0 11px rgba(10, 9, 9, 0.824));
+        }
+
+        div[class="container_12"] {
+            margin-top: 8px;
+        }
+
+        section[class="container clearfix"] {
+            width: 99.87%;
+        }
+
+        div[class="dlk"] {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 160px;
+            height: 50px;
+            /*border: 2px solid #3bd127;*/
+        }
+
+        img[class="touxiang"] {
+            float: left;
+            width: 50px;
+            height: 50px;
+        }
+
+        div[class="spanone"] {
+            padding-right: 8px;
+            float: left;
+            width: 100px;
+            height: 50px;
+            /*border: 1px solid #f10606;*/
+        }
+
+        /*要添加的元素addclass*/
+        div[class="spanone1"] {
+            display: grid;
+            place-items: center;
+        }
+
+        button[class="dlks"] {
+            width: 40px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 5px;
+            float: left;
+            background-color: #ffffff00;
+            color: #ffffff;
+            font-size: 10px;
+        }
+
+        span[class="dlks"] {
+            float: left;
+            background-color: #ffffff00;
+            color: #fff;
+            font-size: 25px;
+            font-family: '华文楷体';
+        }
+
+        div[class="dazhuti"] {
+            width: 100%;
+            margin: auto;
+            /*border: 1px solid #f80000;*/
+            display: table;
+        }
+
+        div[class="shouyezhuti"] {
+            width: 937px;
+            margin: auto;
+            display: none;
+            /*border: 1px solid #c70dff;*/
+            display: table;
+        }
+
+        .dazhuti::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .shouyezhuti::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        div[class="myDiv"] {
+            width: 461.5px;
+            height: 330px;
+            margin-bottom: 35px;
+            margin-right: 3.5px;
+            margin-left: 3.5px;
+            float: left;
+            transition: transform 0.3s ease;
+            /* 添加过渡效果 */
+        }
+
+        div[class="wenben"] {
+            width: 461.5px;
+            height: 330px;
+            background-color: rgb(0, 0, 0);
+            opacity: 80%;
+            display: none;
+        }
+
+        div[id="shipin"] {
+            width: 1195px;
+        }
+
+        .one-fourth {
+            display: none;
+        }
+
+        .yangran{
+            color: #ff0000;
+            font-family: '华文楷体';
+            font-weight: bold;
+        }
+    </style>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .nav-bar {
+            margin: auto;
+            width: 940px;
+            background-color: rgba(14, 13, 13, 0.8);
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        }
+
+        .nav-bar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        .nav-bar li {
+            padding: 15px;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .nav-bar li::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-bar li:hover::after,
+        .nav-bar li.active::after {
+            width: 100%;
+        }
+
+        .nav-bar li.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-bar .slider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-bar li i {
+            margin-right: 5px;
+        }
+
+        .content {
+            height: 2000px;
+            /* 用于模拟长页面 */
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            jQuery('#camera_wrap').camera({
+                loader: 'pie',
+                pagination: true,
+                minHeight: '200',
+                thumbnails: true,
+                height: '40.85106382978723%',
+                caption: true,
+                navigation: true,
+                fx: 'mosaic'
+            });
+            $().UItoTop({ easingType: 'easeOutQuart' });
+            $('.tooltip').tooltipster();
+        });
+    </script>
+
+</head>
+
+<body class="page1" id="top">
+    <!-- 头部导航栏 -->
+    <div class="liquid light">
+        <div id="header-top" class="clearfix">
+            <section class="container clearfix">
+
+                <svg viewBox="0 0 960 300">
+                    <symbol id="s-text">
+                        <text text-anchor="middle" x="50%" y="60%">GanmeGalaxy</text>
+                    </symbol>
+                    <g class="g-ants">
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                    </g>
+
+                </svg>
+
+                <div class="dlk">
+                    <img src="images/touxiang1.png" alt="" class="touxiang">
+                    <div class="spanone">
+                        <button class="dlks" id="denglu">登录</button>
+                        <button class="dlks" id="zhuce">注册</button>
+                        <!-- <span class="dlks">高峰</span> -->
+                    </div>
+                </div>
+            </section>
+            <a href="#" id="more"></a>
+        </div>
+    </div>
+
+
+    <!-- 轮播 -->
+    <div class="container_12">
+        <div class="grid_12">
+            <div class="slider_wrapper ">
+                <div class="camera_wrap" id="camera_wrap">
+                    <div data-thumb="images/thumb.png" data-src="images/slide.jpg">
+                        <div class="caption fadeFromBottom">
+                            王者荣耀
+                        </div>
+                    </div>
+                    <div data-thumb="images/thumb1.jpg" data-src="images/slide1.jpg">
+                        <div class="caption fadeFromBottom">
+                            地平线4
+                        </div>
+                    </div>
+                    <div data-thumb="images/thumb2.png" data-src="images/slide2.jpg">
+                        <div class="caption fadeFromBottom">
+                            极品飞车
+                        </div>
+                    </div>
+                    <div data-thumb="images/thumb3.png" data-src="images/slide3.jpg">
+                        <div class="caption fadeFromBottom">
+                            CS
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 中部导航栏 -->
+    <nav class="nav-bar">
+        <ul class="activeul">
+            <li class="active"><i class="fas fa-home"></i>首页</li>
+            <li><i class="fas fa-info-circle"></i>介绍</li>
+            <li><i class="fas fa-cogs"></i>视频</li>
+            <li><i class="fas fa-envelope"></i>购物车</li>
+            <li><i class="fas fa-envelope1"></i>留言</li>
+            <div class="slider"></div>
+        </ul>
+    </nav>
+
+
+
+    <div class="dazhuti">
+        <!-- 主题内容 -->
+        <div class="shouyezhuti">
+            <div class="main">
+                <div class="content-1">
+                    <img src="./img/1.jpg" alt="">
+                    <div>
+                        <ul>
+                            <li>《极品飞车》</li>
+                            <li> 游戏类型：RAC(竞速游戏)</li>
+                            <li>游戏平台:
+                                家用机：PS3、X360、Wii、WiiU
+                                掌机：GBA、NDS、PSP、3DS
+                                其他：PC</li>
+                            <li>地区：美洲、欧洲、澳洲、亚洲
+                                开发商:Black Box、Criterion Games等
+                                发行公司:美国艺电</li>
+                            <li>内容主题:赛车、警匪、街头竞速、
+                                玩家人数:单人、大型多人
+                                游戏画面:3D
+                                游戏分级:ESRB-E</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="content-2">
+                    <img src="./img/12.jpg" alt="">
+                    <div>
+                        <ul>
+                            <li>《王者荣耀》</li>
+                            <li>游戏类型：MOBA类国产手游>
+                            <li>地区：中国。外服版本为《传说对决》美国。</li>
+                            <li>内容主题：竞技对战为主，玩家之间进行1V1、3V3、5V5等多种方式的PVP对战，
+                                在满足条件后可以参加游戏的排位赛等</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="content-1">
+                    <img src="./img/14.jpg" alt="">
+                    <div>
+                        <ul>
+                            <li>《极限竞速：地平线4》</li>
+                            <li> 游戏类型：RAC(竞速游戏)
+                            </li>
+                            <li>游戏平台
+                                Windows 10、
+                                Xbox One、
+                                Xbox Series X/S、
+                                Steam</li>
+                            <li> 开发商
+                                Playground Games
+                                发行公司
+                                Microsoft Studios
+                                发行日期
+                                2018年10月2日(2024年12月15日停售)21
+                            </li>
+                            <li>游戏类容：玩家不仅仅是单纯的跑分和竞速，还可以自由地对车辆进行改装、涂装，在该作开阔的世界上兜风，拍照，然后参加系列赛、
+                                淘汰之王、地平线Super7等等奇奇怪怪的模式，还有各种特技比赛。</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="content-2">
+                    <img src="./img/13.jpg" alt="">
+                    <div>
+                        <ul>
+                            <li>《永劫无间》</li>
+                            <li>游戏类型：类RPG（大逃杀）</li>
+                            <li>游戏平台：Steam、网易</li>
+                            <li>游戏类容：游戏的玩法核心是紧张刺激的生存竞技。在天选之人、天人之战等经典生存模式中，玩家可以选择单排、双排或三排组队进入战局。</li>
+                            <li>开发商：网易</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="content-1">
+                    <video controls src="./img/1.mp4"></video>
+                    <div>
+                        <ul>
+                            <li>
+                                <br/><br/>
+                                《反恐精英：全球攻势》
+                            </li>
+                            <li>
+                                是一款由VALVE与Hidden Path Entertainment合作开发、
+                                Valve Software发行的第一人称射击游戏
+                            </li>
+                            <li>
+                                2023年9月28日凌晨，V社正式上线了《反恐精英2》游戏，《CS:GO》玩家可直接升级到新版本。
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shouyezhuti">
+            <div class="myDiv">
+                <div class="wenben">
+                    《极品飞车》<br />
+                    （Need for Speed）是由美国艺电游戏公司出品研发的一款赛车类游戏。
+                    游戏试图在爽快的赛车比赛和车辆的拟真上找到平衡点。这款游戏在世界车迷心目中占有重要地位。
+                    1994年，《极品飞车》发行系列的初代产品，其续作有从1995年至2022年，已经一共出品了22部正作。
+                    现系列最新作为系列第22作《极品飞车：不羁》，于2022年12月2日发布。3
+                    中文名:极品飞车
+                    原版名称:Need For Speed
+                    别名:極速快感
+                    游戏类型:RAC(竞速游戏)
+                    游戏平台:
+                    家用机：PS3、X360、Wii、WiiU
+                    掌机：GBA、NDS、PSP、3DS
+                    其他：PC、手机
+                    所属系列:极品飞车
+                    地区:美洲、欧洲、澳洲、亚洲
+                    开发商:Black Box、Criterion Games等
+                    发行公司:美国艺电
+                    发行日期:1994年(首作)
+                    内容主题:赛车、警匪、飚车、街头竞速、非法飙车
+                    玩家人数:单人、多人、大型多人（NFS World）
+                    游戏画面:3D
+                    游戏分级:ESRB-E
+                    最新版本:极品飞车：不羁3
+                </div>
+            </div>
+
+            <div class="myDiv">
+                <div class="wenben">
+                    《最终幻想》<br />
+                    Fantasy）是由日本SQUARE公司发行的一款经典[角色扮演类电子游戏系列‌，
+                    首次发布于1987年12月18日。该系列游戏在全球范围内取得了巨大的成功，截至2023年，全球销量和下载量已经超过了1.8亿份。‌12
+                    《最终幻想》系列的第一作发布于1987年，玩家扮演光之战士，为了拯救世界展开冒险的故事。随着系列的不断发展，
+                    《最终幻想14:重生之境》（Final Fantasy XIV: A Realm Reborn）成为该系列最成功的大型多人在线角色扮演游戏（MMORPG），
+                    获得了多项游戏大奖，并在全球范围内拥有大量玩家。
+                    此外，《最终幻想像素重制版》也在2023年4月19日上线，进一步扩展了该系列的受众群体。这些作品不仅在游戏中融入了丰富的剧情和角色，
+                    还通过重制版和续作不断吸引新的玩家加入
+                </div>
+            </div>
+
+            <div class="myDiv">
+                <div class="wenben">
+                    《英雄联盟》<br />（League of Legends，简称LOL）是由美国拳头游戏（Riot
+                    Games）开发、中国内地由腾讯游戏代理运营的英雄对战MOBA竞技网游。游戏里拥有数百个个性英雄，并拥有排位系统、符文系统等特色系统。
+                    《英雄联盟》致力于推动全球电子竞技的发展，除了联动各赛区发展职业联赛、打造电竞体系之外，每年还会举办“英雄联盟季中冠军赛”、“英雄联盟全球总决赛”、“英雄联盟全明星赛”三大世界级赛事，形成了自己独有的电子竞技文化。
+                    2018年5月14日，《英雄联盟》加入“亚洲运动会”，成为表演项目之一82
+                    。2019年9月17日，拳头游戏值《英雄联盟》十周年之际发布了其全新的LOGO，并公布每一天全世界都有超过八百万玩家同时在线，这意味着英雄联盟依然是全球玩家数最大的电脑游戏81
+                    。
+                    2020年8月28日，英雄联盟官方公布周杰伦和王俊凯为《英雄联盟》中国区代言人183
+                    。
+                    中文名
+                    英雄联盟
+                    原版名称
+                    League of Legends
+                    别名
+                    撸啊撸、LOL
+                    游戏类型
+                    MOBA
+                    游戏平台
+                    Microsoft Windows
+                    MacOS
+                    开发商
+                    拳头游戏
+                    发行公司
+                    拳头游戏
+                    发行日期
+                    2009年10月27日(美服)
+                    2011年9月22日(国服)
+                </div>
+            </div>
+
+            <div class="myDiv">
+                <div class="wenben">
+                    《反恐精英：全球攻势》<br />原名Counter-Strike: Global Offensive，是一款由VALVE与Hidden Path Entertainment合作开发、Valve
+                    Software发行的第一人称射击游戏，于2012年8月21日在欧美地区正式发售，国服发布会于2017年4月11日在北京召开。游戏为《反恐精英》系列游戏的第四款作品（不包括Neo和Online等衍生作品）。
+                    游戏玩家分为反恐精英（CT阵营）与恐怖分子（T阵营）两个阵营，双方需在一个地图上进行多回合的战斗，达到地图要求目标或消灭全部敌方则取得胜利。
+                    2023年9月28日凌晨，V社正式上线了《反恐精英2》游戏，《CS:GO》玩家可直接升级到新版本。
+                    2023年10月10日，IT之家消息，随着《CS2》游戏更新的发布，V社即将停止对《CS:GO》的支持。
+                </div>
+            </div>
+
+            <div class="myDiv">
+                <div class="wenben">
+                    《光环》<br />
+                    [guāng huán]
+                    美国微软公司于2001年推出的第一人称射击游戏
+                    共16个同名词条
+                    《光环》（HALO）是Bungie开发1
+                    、微软发行的游戏系列。第一部作品是于2001年11月15日在XBOX平台发行的第一人称射击游戏。
+                    该系列讲述了未来人类与来自猎户座，以宗教结合外星种族的联盟“星盟”（Covenant）的战争。
+                    星盟的首领认为人类会阻止他们的伟大使命——朝圣之旅，因此对人类展开杀戮，尽管人类顽强对抗，也无法击败对手的强大科技力量。在联合国太空指挥部(UNSC)最后且最大的要塞致远星遭到圣约毁灭后，逃出来的幸存者发现了先行者(Forerunners)的遗迹，也是星盟的圣地——“HALO环带”，故事由此展开。
+                    Bungie宣布于2021年2月9日永久下架他们运营的《光环》官方网站1
+                    。
+                    343 Industries宣布于2022年1月14日，停止Xbox 360上对《光环》游戏的在线功能支持4
+                    。
+                    中文名
+                    光环
+                    原版名称
+                    Halo
+                    别名
+                    光晕(早期译名)、最后一战(中国台湾译名)
+                    游戏类型
+                    FPS
+                    游戏平台
+                    PC/XBOX/XBOX 360/Mac
+                    开发商
+                    Bungie、Ensemble、343、微软
+                    发行公司
+                    微软
+                    发行日期
+                    2001年11月
+                    背景音乐
+                    Halo Theme、Halo Theme Mjolnir Mix
+                    内容主题
+                    射击
+                    结局数
+                    1 个
+                    主要角色
+                    约翰（士官长）、柯塔娜
+                </div>
+            </div>
+
+            <div class="myDiv">
+                <div class="wenben">
+                    《战神5：诸神黄昏》‌<br />是由圣莫尼卡工作室开发、索尼互动娱乐发行的动作冒险电子游戏，于2022年11月9日正式发售。游戏剧情承接前作《战神4》，讲述了奎托斯和阿特柔斯在北欧神话世界中的冒险故事，面对“诸神黄昏”的末日考验‌12。
+
+                    故事背景
+                    游戏设定在前作数年后，芬布尔之冬的寒风吹到米德加，使克雷多斯、阿特柔斯与密米尔在北欧荒野中的生存比之前更具挑战性。尽管父子俩在之前的故事中建立了深厚的信任与理解，但他们的互动仍然存在复杂性，特别是在揭晓阿特柔斯肩负的巨人传承以及只有克雷多斯看到的预言之后‌14。
+
+                    主要角色
+                    ‌奎托斯‌：曾经是希腊神话中的暴怒战神，现在成为了一位父亲，试图在战斗与守护之间找到平衡。
+                    ‌阿特柔斯‌：奎托斯的儿子，年轻的洛基，开始对自己的身份与命运产生更深的思考，渴望更多的行动力‌2。
+                    ‌弗蕾雅‌：森林女巫，与奎托斯和阿特柔斯为敌，誓为儿子的死复仇。
+                    ‌索尔‌：雷神，承受失去异母兄弟的痛苦，针对奎托斯父子而来《战神5：诸神黄昏》‌是由圣莫尼卡工作室开发、索尼互动娱乐发行的动作冒险电子游戏，于2022年11月9日正式发售。游戏剧情承接前作《战神4》，讲述了奎托斯和阿特柔斯在北欧神话世界中的冒险故事，面对“诸神黄昏”的末日考验‌12。
+
+                    故事背景
+                    游戏设定在前作数年后，芬布尔之冬的寒风吹到米德加，使克雷多斯、阿特柔斯与密米尔在北欧荒野中的生存比之前更具挑战性。尽管父子俩在之前的故事中建立了深厚的信任与理解，但他们的互动仍然存在复杂性，特别是在揭晓阿特柔斯肩负的巨人传承以及只有克雷多斯看到的预言之后‌14。
+
+                    主要角色
+                    ‌奎托斯‌：曾经是希腊神话中的暴怒战神，现在成为了一位父亲，试图在战斗与守护之间找到平衡。
+                    ‌阿特柔斯‌：奎托斯的儿子，年轻的洛基，开始对自己的身份与命运产生更深的思考，渴望更多的行动力‌2。
+                    ‌弗蕾雅‌：森林女巫，与奎托斯和阿特柔斯为敌，誓为儿子的死复仇。
+                    ‌索尔‌：雷神，承受失去异母兄弟的痛苦，针对奎托斯父子而来《战神5：诸神黄昏》‌是由圣莫尼卡工作室开发、索尼互动娱乐发行的动作冒险电子游戏，于2022年11月9日正式发售。游戏剧情承接前作《战神4》，讲述了奎托斯和阿特柔斯在北欧神话世界中的冒险故事，面对“诸神黄昏”的末日考验‌12。
+                </div>
+            </div>
+
+            <div class="myDiv">
+                <div class="wenben">
+                    《王者荣耀》<br />是由腾讯游戏天美工作室群开发并运营在Android、IOS平台上的MOBA类国产手游，于2015年11月26日在Android、iOS平台上正式公测，游戏曾经使用名称有《英雄战迹》、《王者联盟》。《王者荣耀》的外服版本为《传说对决》。
+                    王者荣耀中的玩法以竞技对战为主，玩家之间进行1V1、3V3、5V5等多种方式的PVP对战，在满足条件后可以参加游戏的排位赛等，还可以参加PVE的闯关模式，是属于推塔类型的游戏。
+                    2024年2月19日，《王者荣耀》与电竞世界杯（EWC）正式官宣合作。2024年5月，《王者荣耀》将在传统文化传承方面持续加大投入，发布多项全新规划：传承千年不熄的光影艺术——皮影戏；以月亮为灵感推出一款全新皮肤；同时将以“文明与灵秀之物的邂逅”为主题设计九周年限定皮肤，走进它们的故事。
+                    2024年6月24日，腾讯电竞在“世界竞行时”的专场发布会宣布，王者荣耀国际服（Honor of
+                    Kings）已于6月20日正式面向海外市场发布。 7月10日消息，《王者荣耀》宣布，全新模式10v10众星峡谷将于7月18日正式上线。 7月19日，王者荣耀“墨染江湖”系列皮肤上线。7月22日，王者荣耀国际服HonorofKings宣布全球上线累计注册用户数破5000万。
+                </div>
+            </div>
+
+            <div class="myDiv">
+                <div class="wenben">
+                    《极限竞速：地平线4》<br />是由Playground Games开发的一款赛车竞速游戏，是《极限竞速：地平线》系列的第四部作品，于2018年10月2日发行。
+                    在游戏中，玩家不仅仅是单纯的跑分和竞速，还可以自由地对车辆进行改装、涂装，在该作开阔的世界上兜风，拍照，然后参加系列赛、淘汰之王、地平线Super7等等奇奇怪怪的模式，还有各种特技比赛。12-14
+                    2018年12月6日，该作获得The Game Awards 2018 最佳体育/竞速游戏奖。
+                    5
+                    由于与合作伙伴的授权和协议到期，《极限竞速：地平线4》将于 2024 年 12 月 15 日从数字平台（Microsoft Store 和 Steam）下架。21
+                    中文名
+                    极限竞速：地平线4
+                    原版名称
+                    Forza Horizon 4
+                    别名
+                    地平线4、FH4
+                    游戏类型
+                    赛车、竞速
+                    游戏平台
+                    Windows 10
+                    Xbox One
+                    Xbox Series X/S
+                    Steam
+                    所属系列
+                    极限竞速：地平线
+                    开发商
+                    Playground Games
+                    发行公司
+                    Microsoft Studios
+                    发行日期
+                    2018年10月2日(2024年12月15日停售)21
+                    玩家人数
+                    1 至 72 人
+                    游戏画面
+                    3D
+                    游戏分级
+                    3（PEGI）3
+                    3+（IARC）4
+                    最新版本大小
+                    79.41 GB
+                    发行阶段
+                    已发行
+                    展开
+                    特色词条本词条按照特色词条指南编辑并维护贡献维护者 JCremove
+                    ￼￼￼
+                    其他贡献者
+                </div>
+            </div>
+
+            <div class="myDiv">
+                <div class="wenben">
+                    《鬼泣》<br />（英文：Devil May Cry，日文：デビル メイ クライ，意思是“恶魔会哭泣”）》，
+                    其它中文译名：《恶魔猎人》、《魔颤》，是日本CAPCOM公司发行的动作类单机游戏，以华丽的战斗表现为特色，
+                    无论是场景、气氛、及系统都优秀。游戏讲述一位超人类的恶魔猎人经营名叫「Devil May Cry」的事务所，
+                    与来自魔界的恶魔进行对抗，阻止它们入侵人间。
+                    玩家可操纵主人公使用大剑或枪械以及各种武器打倒敌人（恶魔）以便冒险。虽然是劝善惩恶的单纯故事，
+                    但游戏被塑造得既简单又华丽，拥有快速动作性和硬派难易度，以及因充满紧张地打倒敌人的爽快感而受欢迎，
+                    开创了“Stylish Action”的游戏类型，后作为CAPCOM的招牌作品之一被系列化。
+                    系列许多地方是引用了世界各地的神话传说和历史人物作为参考，包括角色与武器，
+                    而主要角色大部分以《神曲》为主，例如但丁（但丁·阿利基耶里）、维吉尔（维吉留斯）、翠西（贝雅特丽齐）、露西亚（圣·露西亚）。
+                    初代《鬼泣》于2001年8月首次登陆PS2，随后以收录了系列前三部《鬼泣HD合集》的形式在2012年3月登陆PS3/Xbox 360
+                    ，并在2018年3月登陆PS4/Xbox One/PC。初代《鬼泣》于6月25日于北美、于6月27日在日本地区登陆Switch，1990日元。
+                    Switch版《鬼泣》容量9.2GB，支持官方中文、英语、日语等语言。
+                </div>
+            </div>
+
+            <div class="myDiv">
+                <div class="wenben">
+                    《永劫无间》<br />宛如一颗璀璨的明星，以其独特的武侠风格与紧张刺激的大逃杀玩法，吸引了无数玩家投身其中。
+
+                    进入游戏，首先映入眼帘的是丰富多样的角色选择。每个角色都有着独特的背景故事与鲜明的性格特征，他们的技能和大招更是千差万别。无论是擅长近战的刚猛战士，还是以敏捷和技巧见长的刺客型英雄，亦或是能够掌控元素之力辅助团队的神秘角色，都能让玩家找到契合自己游戏风格的那一款。玩家还可以根据自己的喜好定制角色的外观，从服饰到武器外观，展现独一无二的个性风采。
+
+                    游戏的玩法核心是紧张刺激的生存竞技。在天选之人、天人之战等经典生存模式中，玩家可以选择单排、双排或三排组队进入战局。游戏开始时，玩家仿若武侠小说中的侠客，从地图的各个角落飞身而降，落地后便马不停蹄地寻找武器、装备与资源。而地图中的“暗域”设定则是一大亮点，它如同死神的阴影，不断地蔓延扩散，逼迫着玩家们逐渐向安全区域靠拢，也使得战斗的节奏愈发紧凑，玩家之间
+
+                    的对抗冲突不断升级。最终，只有一支队伍能够在这场残酷的角逐中脱颖而出，成为最后的胜利者。
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="shouyezhuti" id="shipin">
+            <main>
+                <div class="A6">
+                    <p id="text"></p>
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/王者荣耀1.mp4">
+                    </video>
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/王者荣耀2.mp4">
+                    </video>
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/王者荣耀3.mp4">
+                    </video>
+                    <p id="text">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;《王者荣耀》是由腾讯游戏天美工作室群开发并运营在Android、IOS平台上的MOBA类国产手游,于2015年11月26日在Android、
+                        iOS平台上正式公测,游戏曾经使用名称有《英雄战迹》、《王者联盟》。《王者荣耀》的外服版本为《传说对决》。<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;王者荣耀中的玩法以竞技对战为主,玩家之间进行1V1、3V3、5V5等多种方式的PVP对战,在满足条件后可以参加游戏的排位赛等，
+                        还可以参加PVE的闯关模式,是属于推塔类型的游戏。<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2024年2月19日,《王者荣耀》与电竞世界杯(EWC)正式官宣合作。2024年5月,《王者荣耀》将在传统文化传承方面持续加大投入,
+                        发布多项全新规划：传承千年不熄的光影艺术——皮影戏；以月亮为灵感推出一款全新皮肤；同时将以“文明与灵秀之物的邂逅”为主题
+                        设计九周年限定皮肤,走进它们的故事。2024年6月24日,腾讯电竞在“世界竞行时”的专场发布会宣布，王者荣耀国际服(Honor of Kings)
+                        已于6月20日正式面向海外市场发布。7月10日消息,《王者荣耀》宣布,全新模式10v10众星峡谷将于7月18日正式上线。
+                        7月19日,王者荣耀“墨染江湖”系列皮肤上线。7月22日,王者荣耀国际服HonorofKings宣布全球上线累计注册用户数破5000万。
+                    </p>
+                </div>
+                <div class="A6">
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/永劫4.mp4">
+                    </video>
+                    <video width="395px" height="350px" controls type="video/mp4" id="www">
+                        <source src="img/永劫5.mp4">
+                    </video>
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/永劫6.mp4">
+                    </video>
+                    <p id="text">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;永劫无间 》是由网易旗下“24 Entertainment工作室”开发的一款多人动作竞技游戏
+                        ,于2021年7月8日开启不删档测试,
+                        《永劫无间》Steam全球公测于2021年8月12日10:00正式开服。同年12月9日,《永劫无间》正式登陆EPIC商城。
+                        2022年6月23日《永劫无间》正式登陆Xbox主机,首发加入XGP。2023年7月14日起,《永劫无间》由原本的买断制将转为免费游戏，
+                        并于同日登陆 PS5 平台。游戏讲述了以虚构的幻想世界为背景，阴阳二神互相杀伐，导致世界处于永劫之中。玩家需扮演一名英雄，
+                        在地图中收集各种资源，
+                        与其他玩家对抗，生存到最后。<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人竞技模式:有武道争锋和无尽试炼两种。武道争锋16名玩家分组对决,先获两胜晋级，禁用奥义技能；无尽试炼在地图特定区域战斗，
+                        玩家被击败可无限复活，依击败人数获积分排名.<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PVE
+                        模式:“征神之路”于2022年8月5日推出:周五至周日下午1点至凌晨1点开放,有普通、困难、噩梦三种难度，玩家可组队或单独游玩，
+                        有独立人物等级和魂玉系统.
+                    </p>
+                </div>
+                <div class="A6">
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/极品飞车1.mp4">
+                    </video>
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/地平线1.mp4">
+                    </video>
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/地平线3.mp4">
+                    </video>
+                    <p id="text">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;《极品飞车》(Need for
+                        Speed)是由美国艺电游戏公司出品研发的一款赛车类游戏。游戏试图在爽快的赛车比赛和车辆的拟真上
+                        找到平衡点。这款游戏在世界车迷心目中占有重要地位。1994年,《极品飞车》发行系列的初代产品,其续作有从1995年至2022年,
+                        已经一共出品了22部正作。<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;《极限竞速:地平线4》是由Playground
+                        Games开发的一款赛车竞速游戏,是《极限竞速:地平线》系列的第四部作品,
+                        于2018年10月2日发行。<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在游戏中,玩家不仅仅是单纯的跑分和竞速,还可以自由地对车辆进行改装、涂装,在该作开阔的世界上兜风,拍照,然后参加系列赛、
+                        淘汰之王、地平线Super7等等奇奇怪怪的模式,还有各种特技比赛。12-142018年12月6日,该作获得The Game Awards 2018 最佳体育/竞速游戏奖。
+                        由于与合作伙伴的授权和协议到期,《极限竞速:地平线4》将于2024年12月15日从数字平台(Microsoft Store 和 Steam)下架。
+                    </p>
+                </div>
+                <div class="A6">
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/CS1.mp4">
+                    </video>
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/CS2.mp4">
+                    </video>
+                    <video width="395px" height="350px" controls type="video/mp4">
+                        <source src="img/CS6.mp4">
+                    </video>
+                    <p ID="text">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;《反恐精英:全球攻势》,原名Counter-Strike: Global
+                        Offensive,是一款由VALVE与Hidden Path Entertainment合作开发、
+                        Valve Software发行的第一人称射击游戏,于2012年8月21日在欧美地区正式发售,国服发布会于2017年4月11日在北京召开。
+                        游戏为《反恐精英》系列游戏的第四款作品(不包括Neo和Online等衍生作品)。<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游戏玩家分为反恐精英(CT阵营)与恐怖分子(T阵营)两个阵营，双方需在一个地图上进行多回合的战斗，达到地图要求目标或消灭全部敌方则取得胜利。
+                        2023年9月28日凌晨,V社正式上线了《反恐精英2》游戏,《CS:GO》玩家可直接升级到新版本。
+                        2023年10月10日,IT之家消息,随着《CS2》游戏更新的发布,V社即将停止对《CS:GO》的支持。
+                    </p>
+                </div>
+            </main>
+        </div>
+        <div class="shouyezhuti">
+
+            <table style="width: 100%; background-color:#040404; color:#fff;" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="display: table-cell; text-align: center; vertical-align: middle;">商品图片</td>
+                    <td style="display: table-cell; text-align: center; vertical-align: middle;">商品名称</td>
+                    <td style="display: table-cell; text-align: center; vertical-align: middle;">商品价格</td>
+                    <td style="display: table-cell; text-align: center; vertical-align: middle;">操作</td>
+                </tr>
+                <tr>
+                    <td  style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <img src="img/1.jpg" />
+                    </td>
+                    <td class="left" style="display: table-cell; text-align: center; vertical-align: middle;">NEED RNAS</td>
+                    <td class="sum" style="display: table-cell; text-align: center; vertical-align: middle;">260.00元</td>
+                    <td align="center" style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <input type="button" value="加入购物车" onclick="add_shoppingcart(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <img src="img/2.jpg" />
+                    </td>
+                    <td class="left" style="display: table-cell; text-align: center; vertical-align: middle;">FIMTA.W</td>
+                    <td class="sum" style="display: table-cell; text-align: center; vertical-align: middle;">666.80元</td>
+                    <td style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <input type="button" value="加入购物车" onclick="add_shoppingcart(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td  style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <img src="img/3.jpg" />
+                    </td  style="display: table-cell; text-align: center; vertical-align: middle;">
+                    <td class="left" style="display: table-cell; text-align: center; vertical-align: middle;">英雄联盟</td>
+                    <td class="sum" style="display: table-cell; text-align: center; vertical-align: middle;">320.80元</td>
+                    <td align="center" style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <input type="button" value="加入购物车" onclick="add_shoppingcart(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <img src="img/4.jpg" />
+                    </td>
+                    <td class="left" style="display: table-cell; text-align: center; vertical-align: middle;">COUNTERSTRIKE</td>
+                    <td class="sum" style="display: table-cell; text-align: center; vertical-align: middle;">444.00元</td>
+                    <td style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <input type="button" value="加入购物车" onclick="add_shoppingcart(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <img src="img/5.jpg" />
+                    </td>
+                    <td class="left" style="display: table-cell; text-align: center; vertical-align: middle;">HALO4</td>
+                    <td class="sum" style="display: table-cell; text-align: center; vertical-align: middle;">670.40元</td>
+                    <td style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <input type="button" value="加入购物车" onclick="add_shoppingcart(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td  style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <img src="img/6.jpg" />
+                    </td>
+                    <td class="left" style="display: table-cell; text-align: center; vertical-align: middle;">GODofWAR</td>
+                    <td class="sum" style="display: table-cell; text-align: center; vertical-align: middle;">99.00元</td>
+                    <td  style="display: table-cell; text-align: center; vertical-align: middle;">
+                        <input type="button" value="加入购物车" onclick="add_shoppingcart(this)" />
+                    </td>
+                </tr>
+            </table>
+            <div id="photo" onmouseout="hidden()" onmousemove="shows()"></div>
+
+            <h1 class="yangran"><br/>购物车</h1>
+            <table id="a">
+                <thead>
+                    <tr>
+                        <th style="display: table-cell; text-align: center; vertical-align: middle;">商品</th>
+                        <th style="display: table-cell; text-align: center; vertical-align: middle;">单价（元）</th>
+                        <th style="display: table-cell; text-align: center; vertical-align: middle;">数量</th>
+                        <th style="display: table-cell; text-align: center; vertical-align: middle;">金额（元）</th>
+                        <th  style="display: table-cell; text-align: center; vertical-align: middle;">删除</th>
+                    </tr>
+                </thead>
+                <tbody id="goods">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style="display: table-cell; text-align: center; vertical-align: middle;">总计</td>
+                        <td id="total"  style="display: table-cell; text-align: center; vertical-align: middle;"></td>
+                        <td style="display: table-cell; text-align: center; vertical-align: middle;"><button onclick="tk(this)">购买</button></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="shouyezhuti">
+            <div id="outside">
+                <h3>全部留言</h3>
+                <div id="comment">
+                </div>
+                <h4>发表留言</h4>
+                <div id="addComment">
+                    昵 称：<input type="text" id="name" class="input1"/>
+                    <br/><br/>
+                    留言内容：<textarea id="comContent" class="textarea1"></textarea>
+                    <button id='tjpl'>发表留言</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="box">
+            <div>
+                <h3>我们所在</h3>
+                <p>哔哩哔哩</p>
+                <p>抖音</p>
+                <p>微博</p>
+            </div>
+            <div>
+                <h3>在线帮助</h3>
+                <p>咨询电话：6542114</p>
+                <p>合作电话：15462178494</p>
+                <p>我要投诉</p>
+            </div>
+            <div>
+                <h3>制作人员</h3>
+                <p>高峰</p>
+                <p>陈浩南</p>
+                <p>但君豪</p>
+                <p>黎祥锐</p>
+                <p>潘怀义</p>
+            </div>
+            <div>
+                <h3>关于我们</h3>
+                <p>版权所有：web创意工坊</p>
+                <p>地址：贵州工贸职业学院</p>
+                <p>制作队伍：web创意工坊</p>
+            </div>
+
+        </div>
+    </footer>
+    <div class="one-fourth">
+        <a href="#" class="button-style-1 small"></a>
+    </div>
+    <script>
+        $(function () {
+            $("#denglu").click(function () {
+                window.location.href = "login.html"
+            })
+            $("#zhuce").click(function () {
+                window.location.href = "register.html"
+            })
+            $(".touxiang").click(function () {
+                window.location.href = "login.html"
+            })
+        })
+    </script>
+    <script>
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                document.querySelector('.nav-bar').style.opacity = '1';
+            } else {
+                document.querySelector('.nav-bar').style.opacity = '1';
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // 添加导航项点击事件和滑动效果
+        const slider = document.querySelector('.nav-bar .slider');
+        const navItems = document.querySelectorAll('.nav-bar li');
+
+        function moveSlider(item) {
+            slider.style.width = `${item.offsetWidth}px`;
+            slider.style.left = `${item.offsetLeft}px`;
+        }
+
+        navItems.forEach(item => {
+            item.addEventListener('click', function () {
+                document.querySelector('.nav-bar li.active').classList.remove('active');
+                this.classList.add('active');
+                moveSlider(this);
+            });
+        });
+
+        // 初始化滑块位置
+        moveSlider(document.querySelector('.nav-bar li.active'));
+    </script>
+    <script>
+        const myDiv = document.querySelectorAll('.myDiv');
+        for (let i = 0; i < myDiv.length; i++) {
+            /*myDiv[i].addEventListener('mouseenter', function () {
+                this.style.backgroundColor = 'orange';  // 鼠标进入时改变背景颜色为橙色
+            });
+    
+            myDiv[i].addEventListener('mouseleave', function () {
+                this.style.backgroundColor = 'lightgray';  // 鼠标离开恢复原来的背景颜色
+            });*/
+            myDiv[i].style.backgroundImage = `url('img/${i + 1}.jpg')`;
+            myDiv[i].addEventListener('mouseenter', function () {
+                this.style.filter = 'drop-shadow(0 0 11px rgba(10, 9, 9, 0.824))'
+
+            });
+
+            myDiv[i].addEventListener('mouseleave', function () {
+                this.style.filter = ''
+            });
+
+            myDiv[i].addEventListener('mouseenter', function () {
+                this.style.transform = 'translateX(3px) translateY(3px)';
+                // 鼠标悬停时，沿x轴正方向移动10px，沿y轴正方向移动10px
+            });
+
+            myDiv[i].addEventListener('mouseleave', function () {
+                this.style.transform = 'translateX(0) translateY(0)';
+                // 鼠标离开时，回到原始位置
+            });
+
+            $(function () {
+                $(".myDiv").eq(i).click(function () {
+                    $(".wenben").eq(i).slideDown(2000)
+                })
+
+                $(".myDiv").eq(i).mouseleave(function () {
+                    $(".wenben").eq(i).fadeOut(3500)
+                })
+            })
+        }
+        $(function () {
+            $("div[class='shouyezhuti']").eq(0).show().siblings().hide()
+            $(".activeul li").click(function () {
+                let index1 = $(this).index()
+                $("div[class='shouyezhuti']").eq(index1).show().siblings().hide()
+                /*console.log(index1)*/
+            })
+        })
+    </script>
+    <script src="js/liuyan.js"></script>
+    <script>!window.jQuery && document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+    <script src="js/jquery.easing-1.3.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
